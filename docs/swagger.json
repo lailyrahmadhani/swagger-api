@@ -157,6 +157,132 @@
             "description": "Article not found"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Article"
+        ],
+        "summary": "Update an Article",
+        "description": "Edit Article",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Article object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Lorem ipsum"
+                },
+                "body": {
+                  "type": "string",
+                  "example": "Dolor sit amet"
+                }
+              }
+            }
+          },
+          {
+            "in": "path",
+            "name": "articleId",
+            "description": "ID of article to return",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully update article",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "title": {
+                  "type": "string",
+                  "example": "Lorem Ipsum"
+                },
+                "body": {
+                  "type": "string",
+                  "example": "Dolor sit amet"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Article not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Article"
+        ],
+        "summary": "Delete an Article",
+        "description": "Delete Article",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Article object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Lorem ipsum"
+                },
+                "body": {
+                  "type": "string",
+                  "example": "Dolor sit amet"
+                }
+              }
+            }
+          },
+          {
+            "in": "path",
+            "name": "articleId",
+            "description": "ID of article to return",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully delete an article",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "title": {
+                  "type": "string",
+                  "example": "Lorem Ipsum"
+                },
+                "body": {
+                  "type": "string",
+                  "example": "Dolor sit amet"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Article not found"
+          }
+        }
       }
     }
   },
